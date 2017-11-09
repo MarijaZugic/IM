@@ -42,6 +42,43 @@ public class Test {
 		l1.setKrajnja(t2);
 		
 		System.out.println(l1.duzina());
+		
+		System.out.println("Testiranje linije");
+		
+		System.out.println(l1.getPocetna().getX());
+		System.out.println(l1.getPocetna().getY());
+		
+		System.out.println(l1.getKrajnja().getX());
+		System.out.println(l1.getKrajnja().getY());
+		
+		l1.pomeriZa(10, 10);
+		
+		System.out.println("Pomeri za 10-10");
+		
+		System.out.println(l1.getPocetna().getX());
+		System.out.println(l1.getPocetna().getY());
+		
+		System.out.println(l1.getKrajnja().getX());
+		System.out.println(l1.getKrajnja().getY());
+		
+		l1.pomeriNa(0,0);
+		
+		System.out.println("Pomeri na 10-10");
+		
+		System.out.println(l1.getPocetna().getX());
+		System.out.println(l1.getPocetna().getY());
+		
+		System.out.println(l1.getKrajnja().getX());
+		System.out.println(l1.getKrajnja().getY());
+		
+		Pravougaonik p1 = new Pravougaonik();
+		
+		p1.setGoreLevo(t1);
+		p1.setSirina(20);
+		p1.setVisina(10);
+		
+		System.out.println(p1.obim());
+		System.out.println(p1.povrsina());
 
 	}
 

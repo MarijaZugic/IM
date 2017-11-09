@@ -1,9 +1,9 @@
 package oblici;
 
 public class Linija {
-	Tacka pocetna;
-	Tacka krajnja;
-	String boja;
+	private Tacka pocetna;
+	private Tacka krajnja;
+	private String boja;
 	
 	public void setPocetna(Tacka novaPocetna) {
 		pocetna = novaPocetna;
@@ -30,9 +30,9 @@ public class Linija {
 	}
 	
 	public void pomeriNa(int novoX, int novoY) {
+		int rx = novoX - pocetna.getX();
+		int ry = novoY - pocetna.getY();
 		pocetna.pomeriNa(novoX, novoY);
-		int rx = pocetna.getX()-novoX;
-		int ry = pocetna.getY()-novoY;
 		krajnja.pomeriZa(rx, ry);
 	}
 	

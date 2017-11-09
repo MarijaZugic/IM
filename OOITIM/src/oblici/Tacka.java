@@ -1,9 +1,9 @@
 package oblici;
 
 public class Tacka {
-	int x;
-	int y;
-	String boja;
+	private int x;
+	private int y;
+	private String boja;
 	
 	public void setX(int novoX) {
 		x = novoX;
