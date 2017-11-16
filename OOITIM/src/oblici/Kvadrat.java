@@ -5,6 +5,22 @@ public class Kvadrat {
 	private int stranica;
 	private String boja;
 	
+	public Kvadrat() {
+	
+	}
+	
+	public Kvadrat(Tacka goreLevo, int stranica) {
+		this.goreLevo = goreLevo;
+		this.stranica = stranica;
+	}
+
+	public Kvadrat(Tacka goreLevo, int stranica, String boja) {
+		this.goreLevo = goreLevo;
+		this.stranica = stranica;
+		this.boja = boja;
+	}
+
+
 	public void setGoreLevo(Tacka novoGoreLevo) {
 		goreLevo=novoGoreLevo;
 	}

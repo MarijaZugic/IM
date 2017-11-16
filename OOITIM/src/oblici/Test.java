@@ -82,6 +82,51 @@ public class Test {
 		
 		Tacka t10 = new Tacka(10,10);
 		Tacka t11 = new Tacka(20,20,"crvena");
+		
+		Kvadrat k1 = new Kvadrat(t1, 10);
+		
+		System.out.println(k1.obim());
+		System.out.println(k1.povrsina());
+		
+		Krug kr1 = new Krug(t1, 10);
+		
+		System.out.println(kr1.obim());
+		System.out.println(kr1.povrsina());
+		
+		/*Postavi Y koordinatu krajnje tacke linije l1,
+		na vrednost visine pravougaonika p1*/
+		
+		l1.getKrajnja().setY(p1.getVisina());
+		
+		/*Postaviti stranicu kvadrata k1 na sumu X
+		 * koordinate tacke gore levo pravougaonika p1 i
+		 * poluprecnika kruga kr1
+		 */
+		
+		k1.setStranica(p1.getGoreLevo().getX()+kr1.getPoluprecnik());
+		
+		/*Kreirati liniju l3 cija pocetna tacka ce imati X
+		 * koordinatu koja je jednaka X koordinati tacke gore levo
+		 * pravouganika p1 i Y koordinatu jednaku stranici
+		 * kvadrata k1 i krajnju tacku t10)
+		 */
+		
+		Linija l3 = new Linija();
+		Tacka pocetna = new Tacka();
+		pocetna.setX(p1.getGoreLevo().getX());
+		pocetna.setY(k1.getStranica());
+		l3.setPocetna(pocetna);
+		l3.setKrajnja(t10);
+		
+		Tacka t8 = new Tacka(p1.getGoreLevo().getX(), k1.getStranica());
+		Linija l4 = new Linija(t8, t10);
+		
+		Linija l5 = new Linija(new Tacka(p1.getGoreLevo().getX(), k1.getStranica()), t10);
+		
+		
+		
+		
+		
 
 	}
 

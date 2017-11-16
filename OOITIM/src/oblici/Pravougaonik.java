@@ -6,6 +6,23 @@ public class Pravougaonik {
 	private int sirina;
 	private String boja;
 	
+	public Pravougaonik() {
+		
+	}
+
+	public Pravougaonik(Tacka goreLevo, int visina, int sirina) {
+		this.goreLevo = goreLevo;
+		this.visina = visina;
+		this.sirina = sirina;
+	}
+
+	public Pravougaonik(Tacka goreLevo, int visina, int sirina, String boja) {
+		this.goreLevo = goreLevo;
+		this.visina = visina;
+		this.sirina = sirina;
+		this.boja = boja;
+	}
+
 	public Tacka getGoreLevo() {
 		return goreLevo;
 	}

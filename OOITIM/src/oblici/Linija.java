@@ -5,8 +5,21 @@ public class Linija {
 	private Tacka krajnja;
 	private String boja;
 	
-	
-	
+	public Linija() {
+
+	}
+
+	public Linija(Tacka pocetna, Tacka krajnja) {
+		this.pocetna = pocetna;
+		this.krajnja = krajnja;
+	}
+
+	public Linija(Tacka pocetna, Tacka krajnja, String boja) {
+		this.pocetna = pocetna;
+		this.krajnja = krajnja;
+		this.boja = boja;
+	}
+
 	public void setPocetna(Tacka novaPocetna) {
 		pocetna = novaPocetna;
 	}
