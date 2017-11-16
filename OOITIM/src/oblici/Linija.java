@@ -5,6 +5,8 @@ public class Linija {
 	private Tacka krajnja;
 	private String boja;
 	
+	
+	
 	public void setPocetna(Tacka novaPocetna) {
 		pocetna = novaPocetna;
 	}

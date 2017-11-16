@@ -5,6 +5,21 @@ public class Tacka {
 	private int y;
 	private String boja;
 	
+	public Tacka() {
+		
+	}
+	
+	public Tacka(int x, int y) {
+		this.x=x;
+		this.y=y;
+	}
+	
+	public Tacka(int x, int y, String boja) {
+		this.x=x;
+		this.y=y;
+		this.boja=boja;
+	}
+	
 	public void setX(int novoX) {
 		x = novoX;
 	}

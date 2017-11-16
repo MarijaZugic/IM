@@ -79,6 +79,9 @@ public class Test {
 		
 		System.out.println(p1.obim());
 		System.out.println(p1.povrsina());
+		
+		Tacka t10 = new Tacka(10,10);
+		Tacka t11 = new Tacka(20,20,"crvena");
 
 	}
 
