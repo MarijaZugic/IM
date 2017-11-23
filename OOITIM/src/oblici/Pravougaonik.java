@@ -71,5 +71,9 @@ public class Pravougaonik {
 	public int povrsina() {
 		return visina*sirina;
 	}
+	public String toString() {
+		return "Tacka goreLevo=" + goreLevo
+		+", sirina="+sirina+", visina="+visina;
+	}
 
 }

@@ -123,6 +123,41 @@ public class Test {
 		
 		Linija l5 = new Linija(new Tacka(p1.getGoreLevo().getX(), k1.getStranica()), t10);
 		
+		System.out.println(t1.getX());
+		System.out.println(t1.getY());
+		
+		System.out.println(t1);
+		System.out.println(l1.toString());
+		
+		System.out.println(p1);
+		
+		Tacka prva = new Tacka(10,10,"crvena");
+		Tacka druga = new Tacka(10,10,"crvena");
+		
+		System.out.println(prva==druga);
+		
+		System.out.println(prva.equals(druga));
+		
+		System.out.println(prva.equals(l1));
+		
+		String prvi = "pera";
+		String drugi = "pera";
+		
+		System.out.println(prvi==drugi);
+		
+		String treci = new String("pera");
+		String cetvrti = new String("pera");
+		
+		System.out.println(treci==cetvrti);
+		
+		Tacka treca = new Tacka(10,10, treci);
+		Tacka cetvrta = new Tacka(10,10, cetvrti);
+		
+		System.out.println(treca.equals(cetvrta));
+		
+		
+	
+		
 		
 		
 		

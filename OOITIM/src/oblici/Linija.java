@@ -59,6 +59,8 @@ public class Linija {
 	public double duzina() {
 		return pocetna.udaljenost(krajnja);
 	}
-	
+	public String toString() {
+		return pocetna.toString() + "->" + krajnja;
+	}
 
 }

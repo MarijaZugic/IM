@@ -61,5 +61,25 @@ public class Tacka {
 		return rezultat;
 	}
 	
+	public String toString() {
+		return "(" + x + "," + y + ")";
+	}
+	
+	public boolean equals(Object obj) {
+		if (obj instanceof Tacka) {
+			Tacka prosledjena = (Tacka)obj;
+			if(x==prosledjena.getX() &&
+			   y==prosledjena.getY() &&
+			   boja.equals(prosledjena.getBoja())) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	
+	}
+	
 
 }
