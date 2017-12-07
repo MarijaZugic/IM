@@ -103,7 +103,7 @@ public class Test {
 		 * poluprecnika kruga kr1
 		 */
 		
-		k1.setStranica(p1.getGoreLevo().getX()+kr1.getPoluprecnik());
+		k1.setSirina(p1.getGoreLevo().getX()+kr1.getPoluprecnik());
 		
 		/*Kreirati liniju l3 cija pocetna tacka ce imati X
 		 * koordinatu koja je jednaka X koordinati tacke gore levo
@@ -114,14 +114,14 @@ public class Test {
 		Linija l3 = new Linija();
 		Tacka pocetna = new Tacka();
 		pocetna.setX(p1.getGoreLevo().getX());
-		pocetna.setY(k1.getStranica());
+		pocetna.setY(k1.getSirina());
 		l3.setPocetna(pocetna);
 		l3.setKrajnja(t10);
 		
-		Tacka t8 = new Tacka(p1.getGoreLevo().getX(), k1.getStranica());
+		Tacka t8 = new Tacka(p1.getGoreLevo().getX(), k1.getSirina());
 		Linija l4 = new Linija(t8, t10);
 		
-		Linija l5 = new Linija(new Tacka(p1.getGoreLevo().getX(), k1.getStranica()), t10);
+		Linija l5 = new Linija(new Tacka(p1.getGoreLevo().getX(), k1.getSirina()), t10);
 		
 		System.out.println(t1.getX());
 		System.out.println(t1.getY());

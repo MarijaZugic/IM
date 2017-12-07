@@ -1,9 +1,8 @@
 package oblici;
 
-public class Kvadrat {
-	private Tacka goreLevo;
-	private int stranica;
-	private String boja;
+public class Kvadrat extends Oblik{
+	protected Tacka goreLevo;
+	private int sirina;
 	
 	public Kvadrat() {
 	
@@ -11,13 +10,13 @@ public class Kvadrat {
 	
 	public Kvadrat(Tacka goreLevo, int stranica) {
 		this.goreLevo = goreLevo;
-		this.stranica = stranica;
+		this.sirina = stranica;
 	}
 
 	public Kvadrat(Tacka goreLevo, int stranica, String boja) {
+		super(boja);
 		this.goreLevo = goreLevo;
-		this.stranica = stranica;
-		this.boja = boja;
+		this.sirina = stranica;
 	}
 
 
@@ -27,18 +26,14 @@ public class Kvadrat {
 	public Tacka getGoreLevo() {
 		return goreLevo;
 	}
-	public void setStranica(int novaStranica) {
-		stranica=novaStranica;
+	public void setSirina(int novaStranica) {
+		sirina=novaStranica;
 	}
-	public int getStranica() {
-		return stranica;
+	public int getSirina() {
+		return sirina;
 		
-	} public void setBoja(String novaBoja) {
-		boja=novaBoja;
-		
-	}public String getBoja() {
-		return boja;
-	}
+	} 
+
 	public void pomeriZa(int x,int y) {
 		this.goreLevo.pomeriZa(x, y);
 	}
@@ -46,13 +41,28 @@ public class Kvadrat {
 		this.goreLevo.pomeriNa(x, y);
 	}
 	public int povrsina() {
-		int povrsina= stranica*stranica;
+		int povrsina= sirina*sirina;
 		return povrsina;
 		
 	}
 	public int obim() {
-		int obim=stranica*4;
+		int obim=sirina*4;
 		return obim;
+	}
+	/*U klasi Kvadrat kreirati metodu 
+	 * public Linija dijagonala() 
+	 * koja vraca dijagonalu 
+	 * od gore desno do dole levo 
+	 * kvadrata.
+	 */
+	
+	public Linija dijagonala() {
+		Tacka goreDesno = new Tacka(goreLevo.getX() + sirina,
+									goreLevo.getY());
+		Tacka doleLevo = new Tacka(goreLevo.getX(),
+									goreLevo.getY() + sirina);
+		Linija dijagonala = new Linija(goreDesno, doleLevo);
+		return dijagonala;
 	}
 
 }

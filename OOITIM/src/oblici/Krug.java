@@ -1,9 +1,8 @@
 package oblici;
 
-public class Krug {
+public class Krug extends Oblik{
 	private Tacka centar;
 	private int poluprecnik;
-	private String boja;
 	
 	public Krug() {
 		
@@ -15,9 +14,9 @@ public class Krug {
 	}
 
 	public Krug(Tacka centar, int poluprecnik, String boja) {
+		super(boja);
 		this.centar = centar;
 		this.poluprecnik = poluprecnik;
-		this.boja = boja;
 	}
 
 	public Tacka getCentar() {
@@ -32,12 +31,7 @@ public class Krug {
 	public void setPoluprecnik(int poluprecnik) {
 		this.poluprecnik = poluprecnik;
 	}
-	public String getBoja() {
-		return boja;
-	}
-	public void setBoja(String boja) {
-		this.boja = boja;
-	}
+
 	public double obim() {
 		double obim = 2*poluprecnik*Math.PI;
 				return obim;

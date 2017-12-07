@@ -1,9 +1,8 @@
 package oblici;
 
-public class Linija {
+public class Linija extends Oblik{
 	private Tacka pocetna;
 	private Tacka krajnja;
-	private String boja;
 	
 	public Linija() {
 
@@ -15,9 +14,10 @@ public class Linija {
 	}
 
 	public Linija(Tacka pocetna, Tacka krajnja, String boja) {
+		super(boja);
 		this.pocetna = pocetna;
 		this.krajnja = krajnja;
-		this.boja = boja;
+	
 	}
 
 	public void setPocetna(Tacka novaPocetna) {
@@ -34,14 +34,6 @@ public class Linija {
 	
 	public Tacka getKrajnja() {
 		return krajnja;
-	}
-	
-	public void setBoja(String novaBoja) {
-		boja = novaBoja;
-	}
-	
-	public String getBoja() {
-		return boja;
 	}
 	
 	public void pomeriNa(int novoX, int novoY) {
@@ -61,6 +53,18 @@ public class Linija {
 	}
 	public String toString() {
 		return pocetna.toString() + "->" + krajnja;
+	}
+	
+	/*U klasi Linija kreirati metodu 
+	 * public Tacka sredinaLinije() 
+	 * koja vraca središnu tacku linije.
+	 */
+	
+	public Tacka sredinaLinije() {
+		int xs = (pocetna.getX() + krajnja.getX())/2;
+		int ys = (pocetna.getY() + krajnja.getY())/2;
+		Tacka sredina = new Tacka(xs,ys);
+		return sredina;
 	}
 
 }

@@ -1,9 +1,8 @@
 package oblici;
 
-public class Tacka {
+public class Tacka extends Oblik{
 	private int x;
 	private int y;
-	private String boja;
 	
 	public Tacka() {
 		
@@ -15,9 +14,9 @@ public class Tacka {
 	}
 	
 	public Tacka(int x, int y, String boja) {
+		super(boja);		
 		this.x=x;
 		this.y=y;
-		this.boja=boja;
 	}
 	
 	public void setX(int novoX) {
@@ -34,14 +33,6 @@ public class Tacka {
 	
 	public int getY() {
 		return y;
-	}
-	
-	public void setBoja(String novaBoja) {
-		boja = novaBoja;
-	}
-	
-	public String getBoja() {
-		return boja;
 	}
 	
 	public void pomeriNa(int novoX, int novoY) {
@@ -70,7 +61,7 @@ public class Tacka {
 			Tacka prosledjena = (Tacka)obj;
 			if(x==prosledjena.getX() &&
 			   y==prosledjena.getY() &&
-			   boja.equals(prosledjena.getBoja())) {
+			   getBoja().equals(prosledjena.getBoja())) {
 				return true;
 			} else {
 				return false;

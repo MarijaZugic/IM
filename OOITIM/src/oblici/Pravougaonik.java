@@ -1,10 +1,7 @@
 package oblici;
 
-public class Pravougaonik {
-	private Tacka goreLevo;
+public class Pravougaonik extends Kvadrat{
 	private int visina;
-	private int sirina;
-	private String boja;
 	
 	public Pravougaonik() {
 		
@@ -13,24 +10,14 @@ public class Pravougaonik {
 	public Pravougaonik(Tacka goreLevo, int visina, int sirina) {
 		this.goreLevo = goreLevo;
 		this.visina = visina;
-		this.sirina = sirina;
+		setSirina(sirina);
 	}
 
 	public Pravougaonik(Tacka goreLevo, int visina, int sirina, String boja) {
-		this.goreLevo = goreLevo;
-		this.visina = visina;
-		this.sirina = sirina;
-		this.boja = boja;
+		this(goreLevo, visina, sirina);
+		setBoja(boja);
 	}
 
-	public Tacka getGoreLevo() {
-		return goreLevo;
-	}
-	
-	public void setGoreLevo(Tacka novoGoreLevo) {
-		goreLevo = novoGoreLevo;
-	}
-	
 	public int getVisina() {
 		return visina;
 	}
@@ -39,41 +26,17 @@ public class Pravougaonik {
 		visina = novaVisina;
 	}
 	
-	public int getSirina() {
-		return sirina;
-	}
-	
-	public void setSirina(int novaSirina) {
-		sirina = novaSirina;
-	}
-	
-	public void setBoja(String novaBoja) {
-		boja = novaBoja;
-	}
-	
-	public String getBoja() {
-		return boja;
-	}
-	
-	public void pomeriNa(int novoX, int novoY) {
-		goreLevo.pomeriNa(novoX, novoY);
-	}
-	
-	public void pomeriZa(int novoX, int novoY) {
-		goreLevo.pomeriZa(novoX, novoY);
-	}
-	
 	public int obim() {
-		int obim = 2*visina + 2*sirina;
+		int obim = 2*visina + 2*getSirina();
 		return obim;
 	}
 	
 	public int povrsina() {
-		return visina*sirina;
+		return visina*getSirina();
 	}
 	public String toString() {
 		return "Tacka goreLevo=" + goreLevo
-		+", sirina="+sirina+", visina="+visina;
+		+", sirina="+getSirina()+", visina="+visina;
 	}
 
 }
