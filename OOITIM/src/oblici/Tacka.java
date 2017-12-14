@@ -1,5 +1,7 @@
 package oblici;
 
+import java.awt.Graphics;
+
 public class Tacka extends Oblik{
 	private int x;
 	private int y;
@@ -70,6 +72,13 @@ public class Tacka extends Oblik{
 			return false;
 		}
 	
+	}
+
+	@Override
+	public void crtajSe(Graphics g) {
+		g.setColor(this.pronadjiBoju(this.getBoja()));
+		g.drawLine(x-1, y-1, x+1, y+1);
+		g.drawLine(x+1, y-1, x-1, y+1);
 	}
 	
 

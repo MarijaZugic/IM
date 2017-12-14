@@ -1,5 +1,7 @@
 package oblici;
 
+import java.awt.Graphics;
+
 public class Pravougaonik extends Kvadrat{
 	private int visina;
 	
@@ -34,9 +36,27 @@ public class Pravougaonik extends Kvadrat{
 	public int povrsina() {
 		return visina*getSirina();
 	}
+	
 	public String toString() {
 		return "Tacka goreLevo=" + goreLevo
 		+", sirina="+getSirina()+", visina="+visina;
 	}
+	
+	public Linija dijagonala() {
+		Tacka goreDesno = new Tacka(goreLevo.getX() + getSirina(),
+									goreLevo.getY());
+		Tacka doleLevo = new Tacka(goreLevo.getX(),
+									goreLevo.getY() + visina);
+		Linija dijagonala = new Linija(goreDesno, doleLevo);
+		return dijagonala;
+	}
+	
+	public void crtajSe(Graphics g) {
+		g.setColor(this.pronadjiBoju(this.getBoja()));
+		g.drawRect(this.goreLevo.getX(), 
+					this.goreLevo.getY(), 
+					getSirina(), visina);
+	}
 
+	
 }

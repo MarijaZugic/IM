@@ -1,5 +1,7 @@
 package oblici;
 
+import java.awt.Graphics;
+
 public class Kvadrat extends Oblik{
 	protected Tacka goreLevo;
 	private int sirina;
@@ -63,6 +65,23 @@ public class Kvadrat extends Oblik{
 									goreLevo.getY() + sirina);
 		Linija dijagonala = new Linija(goreDesno, doleLevo);
 		return dijagonala;
+	}
+	
+	/*U klasi Kvadrat kreirati 
+	 * metodu public Tacka centar() 
+	 * koja vraca centralnu tacku kvadrata.
+	 */
+	
+	public Tacka centar() {
+		return dijagonala().sredinaLinije();
+	}
+
+	@Override
+	public void crtajSe(Graphics g) {
+		g.setColor(this.pronadjiBoju(this.getBoja()));
+		g.drawRect(this.goreLevo.getX(), 
+					this.goreLevo.getY(), 
+					sirina, sirina);
 	}
 
 }

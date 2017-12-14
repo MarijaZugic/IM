@@ -1,5 +1,7 @@
 package oblici;
 
+import java.awt.Graphics;
+
 public class Linija extends Oblik{
 	private Tacka pocetna;
 	private Tacka krajnja;
@@ -67,4 +69,13 @@ public class Linija extends Oblik{
 		return sredina;
 	}
 
+	@Override
+	public void crtajSe(Graphics g) {
+		g.setColor(this.pronadjiBoju(this.getBoja()));
+		g.drawLine(this.pocetna.getX(), 
+					this.pocetna.getY(), 
+					this.krajnja.getX(), 
+					this.krajnja.getY());
+	}
+	
 }

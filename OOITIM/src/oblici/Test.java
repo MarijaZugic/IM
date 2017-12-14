@@ -155,13 +155,6 @@ public class Test {
 		
 		System.out.println(treca.equals(cetvrta));
 		
-		
-	
-		
-		
-		
-		
-		
 
 	}
 

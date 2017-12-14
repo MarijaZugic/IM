@@ -1,5 +1,7 @@
 package oblici;
 
+import java.awt.Graphics;
+
 public class Krug extends Oblik{
 	private Tacka centar;
 	private int poluprecnik;
@@ -48,8 +50,14 @@ public class Krug extends Oblik{
 	public void pomeriZa(int novoX, int novoY) {
 		centar.pomeriZa(novoX, novoY);
 	}
-	
-	
-	
+
+	@Override
+	public void crtajSe(Graphics g) {
+		g.setColor(this.pronadjiBoju(this.getBoja()));
+		g.drawOval(centar.getX()-poluprecnik, 
+					centar.getY()-poluprecnik, 
+					2*poluprecnik, 
+					2*poluprecnik);
+	}
 
 }
