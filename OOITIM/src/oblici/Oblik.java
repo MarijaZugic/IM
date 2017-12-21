@@ -3,7 +3,7 @@ package oblici;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public abstract class Oblik {
+public abstract class Oblik implements Pomerljiv, Comparable {
 	private String boja;
 	
 	public Oblik() {

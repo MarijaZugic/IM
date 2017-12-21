@@ -1,5 +1,7 @@
 package oblici;
 
+import java.util.Arrays;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -154,6 +156,27 @@ public class Test {
 		Tacka cetvrta = new Tacka(10,10, cetvrti);
 		
 		System.out.println(treca.equals(cetvrta));
+		
+		Tacka[] nizTacaka = new Tacka[3];
+		
+		Tacka t200 = new Tacka(100,100);
+		Tacka t201 = new Tacka(300,300);
+		Tacka t202 = new Tacka(200,200);
+		
+		nizTacaka[0] = t200;
+		nizTacaka[1] = t201;
+		nizTacaka[2] = t202;
+		
+		System.out.println(nizTacaka[0]);
+		System.out.println(nizTacaka[1]);
+		System.out.println(nizTacaka[2]);
+		
+		Arrays.sort(nizTacaka);
+		
+		System.out.println(nizTacaka[0]);
+		System.out.println(nizTacaka[1]);
+		System.out.println(nizTacaka[2]);
+		
 		
 
 	}

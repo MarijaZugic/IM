@@ -77,5 +77,18 @@ public class Linija extends Oblik{
 					this.krajnja.getX(), 
 					this.krajnja.getY());
 	}
+
+	@Override
+	public int compareTo(Object o) {
+		if (o instanceof Linija) {
+			Linija prosledjena = (Linija)o;
+			return (int) (this.duzina() - prosledjena.duzina());
+		} else {
+			return 0;
+		}
+		
+		
+		
+	}
 	
 }

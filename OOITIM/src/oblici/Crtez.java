@@ -22,15 +22,21 @@ public class Crtez extends JPanel{
 		Linija l1 = new Linija(new Tacka(20,20),
 								new Tacka(30,30),
 								"plava");
-		Kvadrat k = new Kvadrat(new Tacka(40,40), 10, "zuta");
+		Kvadrat k = new Kvadrat(new Tacka(40,40), 10, "zuta", "crvena");
 		Pravougaonik p = new Pravougaonik(new Tacka(60,60),
-											30, 20, "zelena");
-		Krug kr = new Krug(new Tacka(120,120), 10, "crna");
+											30, 20, "zelena", "zuta");
+		Krug kr = new Krug(new Tacka(120,120), 10, "crna", "zuta");
 		
 		t1.crtajSe(g);
 		l1.crtajSe(g);
+		
+		k.popuni(g);
 		k.crtajSe(g);
+		
+		p.popuni(g);
 		p.crtajSe(g);
+		
+		kr.popuni(g);
 		kr.crtajSe(g);
 	}
 

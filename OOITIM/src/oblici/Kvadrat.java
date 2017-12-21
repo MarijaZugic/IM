@@ -2,7 +2,7 @@ package oblici;
 
 import java.awt.Graphics;
 
-public class Kvadrat extends Oblik{
+public class Kvadrat extends PovrsinskiOblik{
 	protected Tacka goreLevo;
 	private int sirina;
 	
@@ -16,9 +16,14 @@ public class Kvadrat extends Oblik{
 	}
 
 	public Kvadrat(Tacka goreLevo, int stranica, String boja) {
-		super(boja);
-		this.goreLevo = goreLevo;
-		this.sirina = stranica;
+		this(goreLevo, stranica);
+		this.setBoja(boja);
+	}
+	
+	public Kvadrat(Tacka goreLevo, int stranica, String boja, String bojaUnutrasnjosti) {
+		this(goreLevo, stranica);
+		this.setBoja(boja);
+		this.setBojaUnutrasnjosti(bojaUnutrasnjosti);
 	}
 
 
@@ -42,13 +47,13 @@ public class Kvadrat extends Oblik{
 	public void pomeriNa(int x,int y) {
 		this.goreLevo.pomeriNa(x, y);
 	}
-	public int povrsina() {
-		int povrsina= sirina*sirina;
+	public double povrsina() {
+		double povrsina= sirina*sirina;
 		return povrsina;
 		
 	}
-	public int obim() {
-		int obim=sirina*4;
+	public double obim() {
+		double obim=sirina*4;
 		return obim;
 	}
 	/*U klasi Kvadrat kreirati metodu 
@@ -80,6 +85,24 @@ public class Kvadrat extends Oblik{
 	public void crtajSe(Graphics g) {
 		g.setColor(this.pronadjiBoju(this.getBoja()));
 		g.drawRect(this.goreLevo.getX(), 
+					this.goreLevo.getY(), 
+					sirina, sirina);
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		if (o instanceof Kvadrat) {
+			Kvadrat prosledjen = (Kvadrat)o;
+			return this.sirina - prosledjen.sirina;
+		} else {
+			return 0;
+		}
+	}
+
+	@Override
+	public void popuni(Graphics g) {
+		g.setColor(this.pronadjiBoju(this.getBojaUnutrasnjosti()));
+		g.fillRect(this.goreLevo.getX(), 
 					this.goreLevo.getY(), 
 					sirina, sirina);
 	}

@@ -37,15 +37,6 @@ public class Tacka extends Oblik{
 		return y;
 	}
 	
-	public void pomeriNa(int novoX, int novoY) {
-		x = novoX;
-		y = novoY;
-	}
-	
-	public void pomeriZa(int novoX, int novoY) {
-		x = x + novoX;
-		y = y + novoY;
-	}
 	
 	public double udaljenost(Tacka druga) {
 		int rx = x - druga.getX(); 
@@ -79,6 +70,27 @@ public class Tacka extends Oblik{
 		g.setColor(this.pronadjiBoju(this.getBoja()));
 		g.drawLine(x-1, y-1, x+1, y+1);
 		g.drawLine(x+1, y-1, x-1, y+1);
+	}
+
+	public void pomeriNa(int novoX, int novoY) {
+		x = novoX;
+		y = novoY;
+	}
+	
+	public void pomeriZa(int novoX, int novoY) {
+		x = x + novoX;
+		y = y + novoY;
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		if (o instanceof Tacka) {
+			Tacka prosledjena = (Tacka)o;
+			return (int) (this.udaljenost(new Tacka(0,0))-
+					prosledjena.udaljenost(new Tacka(0,0)));
+		} else {
+			return 0;
+		}
 	}
 	
 

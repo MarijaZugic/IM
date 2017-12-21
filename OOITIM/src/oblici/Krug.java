@@ -2,7 +2,7 @@ package oblici;
 
 import java.awt.Graphics;
 
-public class Krug extends Oblik{
+public class Krug extends PovrsinskiOblik{
 	private Tacka centar;
 	private int poluprecnik;
 	
@@ -16,9 +16,14 @@ public class Krug extends Oblik{
 	}
 
 	public Krug(Tacka centar, int poluprecnik, String boja) {
-		super(boja);
-		this.centar = centar;
-		this.poluprecnik = poluprecnik;
+		this(centar, poluprecnik);
+		this.setBoja(boja);
+	}
+	
+	public Krug(Tacka centar, int poluprecnik, String boja, String bojaUnutrasnjosti) {
+		this(centar, poluprecnik);
+		this.setBoja(boja);
+		this.setBojaUnutrasnjosti(bojaUnutrasnjosti);
 	}
 
 	public Tacka getCentar() {
@@ -58,6 +63,22 @@ public class Krug extends Oblik{
 					centar.getY()-poluprecnik, 
 					2*poluprecnik, 
 					2*poluprecnik);
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void popuni(Graphics g) {
+		g.setColor(this.pronadjiBoju(this.getBojaUnutrasnjosti()));
+		g.fillOval(centar.getX()-poluprecnik, 
+					centar.getY()-poluprecnik, 
+					2*poluprecnik, 
+					2*poluprecnik);
+		
 	}
 
 }

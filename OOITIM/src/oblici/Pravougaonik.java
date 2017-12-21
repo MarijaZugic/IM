@@ -19,6 +19,12 @@ public class Pravougaonik extends Kvadrat{
 		this(goreLevo, visina, sirina);
 		setBoja(boja);
 	}
+	
+	public Pravougaonik(Tacka goreLevo, int visina, int sirina, String boja, String bojaUnutrasnjosti) {
+		this(goreLevo, visina, sirina);
+		setBoja(boja);
+		this.setBojaUnutrasnjosti(bojaUnutrasnjosti);
+	}
 
 	public int getVisina() {
 		return visina;
@@ -28,12 +34,12 @@ public class Pravougaonik extends Kvadrat{
 		visina = novaVisina;
 	}
 	
-	public int obim() {
-		int obim = 2*visina + 2*getSirina();
+	public double obim() {
+		double obim = 2*visina + 2*getSirina();
 		return obim;
 	}
 	
-	public int povrsina() {
+	public double povrsina() {
 		return visina*getSirina();
 	}
 	
@@ -54,6 +60,13 @@ public class Pravougaonik extends Kvadrat{
 	public void crtajSe(Graphics g) {
 		g.setColor(this.pronadjiBoju(this.getBoja()));
 		g.drawRect(this.goreLevo.getX(), 
+					this.goreLevo.getY(), 
+					getSirina(), visina);
+	}
+	
+	public void popuni(Graphics g) {
+		g.setColor(this.pronadjiBoju(this.getBojaUnutrasnjosti()));
+		g.fillRect(this.goreLevo.getX(), 
 					this.goreLevo.getY(), 
 					getSirina(), visina);
 	}
