@@ -5,6 +5,15 @@ import java.awt.Graphics;
 
 public abstract class Oblik implements Pomerljiv, Comparable {
 	private String boja;
+	private boolean selektovan;
+	
+	public boolean isSelektovan() {
+		return selektovan;
+	}
+	
+	public void setSelektovan(boolean selektovan) {
+		this.selektovan = selektovan;
+	}
 	
 	public Oblik() {
 		
@@ -40,6 +49,8 @@ public abstract class Oblik implements Pomerljiv, Comparable {
 	}
 	
 	public abstract void crtajSe(Graphics g);
+	
+	public abstract void selektovan(Graphics g);
 	
 	
 

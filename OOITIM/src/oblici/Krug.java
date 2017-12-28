@@ -63,6 +63,10 @@ public class Krug extends PovrsinskiOblik{
 					centar.getY()-poluprecnik, 
 					2*poluprecnik, 
 					2*poluprecnik);
+		
+		if(this.isSelektovan()) {
+			this.selektovan(g);
+		}
 	}
 
 	@Override
@@ -78,6 +82,26 @@ public class Krug extends PovrsinskiOblik{
 					centar.getY()-poluprecnik, 
 					2*poluprecnik, 
 					2*poluprecnik);
+		
+	}
+
+	@Override
+	public void selektovan(Graphics g) {
+		centar.selektovan(g);
+		
+		Tacka gore = new Tacka(centar.getX(), 
+								centar.getY()-poluprecnik);
+		Tacka dole = new Tacka(centar.getX(),
+								centar.getY()+poluprecnik);
+		Tacka levo = new Tacka(centar.getX()-poluprecnik,
+								centar.getY());
+		Tacka desno = new Tacka(centar.getX()+poluprecnik,
+								centar.getY());
+		
+		gore.selektovan(g);
+		dole.selektovan(g);
+		levo.selektovan(g);
+		desno.selektovan(g);
 		
 	}
 

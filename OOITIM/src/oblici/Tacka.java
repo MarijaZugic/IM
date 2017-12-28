@@ -1,5 +1,6 @@
 package oblici;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Tacka extends Oblik{
@@ -70,6 +71,10 @@ public class Tacka extends Oblik{
 		g.setColor(this.pronadjiBoju(this.getBoja()));
 		g.drawLine(x-1, y-1, x+1, y+1);
 		g.drawLine(x+1, y-1, x-1, y+1);
+		
+		if(this.isSelektovan()) {
+			this.selektovan(g);
+		}
 	}
 
 	public void pomeriNa(int novoX, int novoY) {
@@ -91,6 +96,12 @@ public class Tacka extends Oblik{
 		} else {
 			return 0;
 		}
+	}
+
+	@Override
+	public void selektovan(Graphics g) {
+		g.setColor(Color.BLUE);
+		g.drawRect(x-3, y-3, 6, 6);
 	}
 	
 

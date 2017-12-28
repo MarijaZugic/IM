@@ -76,6 +76,10 @@ public class Linija extends Oblik{
 					this.pocetna.getY(), 
 					this.krajnja.getX(), 
 					this.krajnja.getY());
+		
+		if (this.isSelektovan()) {
+			this.selektovan(g);
+		}
 	}
 
 	@Override
@@ -88,6 +92,14 @@ public class Linija extends Oblik{
 		}
 		
 		
+		
+	}
+
+	@Override
+	public void selektovan(Graphics g) {
+		pocetna.selektovan(g);
+		this.sredinaLinije().selektovan(g);
+		krajnja.selektovan(g);
 		
 	}
 	

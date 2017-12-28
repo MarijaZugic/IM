@@ -62,6 +62,10 @@ public class Pravougaonik extends Kvadrat{
 		g.drawRect(this.goreLevo.getX(), 
 					this.goreLevo.getY(), 
 					getSirina(), visina);
+		
+		if(this.isSelektovan()) {
+			this.selektovan(g);
+		}
 	}
 	
 	public void popuni(Graphics g) {
@@ -69,6 +73,32 @@ public class Pravougaonik extends Kvadrat{
 		g.fillRect(this.goreLevo.getX(), 
 					this.goreLevo.getY(), 
 					getSirina(), visina);
+	}
+	
+	public void selektovan(Graphics g) {
+		this.goreLevo.selektovan(g);
+		this.dijagonala().getPocetna().selektovan(g);
+		this.dijagonala().getKrajnja().selektovan(g);
+		
+		Tacka doleDesno = new Tacka(goreLevo.getX() + getSirina(), 
+									goreLevo.getY() + visina);
+		doleDesno.selektovan(g);
+		
+		Linija gore = new Linija(goreLevo,
+								dijagonala().getPocetna());
+		gore.sredinaLinije().selektovan(g);
+		
+		Linija dole = new Linija(dijagonala().getKrajnja(),
+								doleDesno);
+		dole.sredinaLinije().selektovan(g);
+		
+		Linija levo = new Linija(goreLevo,
+								dijagonala().getKrajnja());
+		levo.sredinaLinije().selektovan(g);
+		
+		Linija desno = new Linija(dijagonala().getPocetna(),
+									doleDesno);
+		desno.sredinaLinije().selektovan(g);
 	}
 
 	

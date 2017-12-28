@@ -1,6 +1,9 @@
 package oblici;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
 
 public class Test {
 
@@ -177,7 +180,51 @@ public class Test {
 		System.out.println(nizTacaka[1]);
 		System.out.println(nizTacaka[2]);
 		
+		ArrayList<Oblik> lista = new ArrayList<Oblik>();
 		
+		lista.add(t1);
+		lista.add(p1);
+		
+		Iterator<Oblik> it = lista.iterator();
+		
+		while(it.hasNext()) {
+			//Oblik o = (Oblik)it.next();
+			System.out.println(it.next());
+		}
+		
+		HashMap<String, Oblik> mapa = new HashMap<String,Oblik>();
+		
+		mapa.put("tacka", t200);
+		mapa.put("linija", l1);
+		mapa.put("TACKA", t201);
+		
+		System.out.println(mapa.get("tacka"));
+		System.out.println(mapa.get("linija"));
+		System.out.println(mapa.get("TACKA"));
+
+		mapa.put("tacka", t202);
+		
+		System.out.println(mapa.get("tacka"));
+		
+		
+		
+		try {
+			Integer.parseInt("123");
+			for(int i=0;i<=5;i++) {
+				System.out.println(nizTacaka[i]);
+			}
+		} catch (ArrayIndexOutOfBoundsException e){
+			System.out.println("Pogresna indeks.");
+			e.printStackTrace();
+		} catch (NumberFormatException e) {
+			System.out.println("Pogresan format.");
+			e.printStackTrace();
+		} finally {
+			System.out.println("Finally");
+		}
+		
+		
+		System.out.println("Kraj programa");
 
 	}
 

@@ -87,6 +87,11 @@ public class Kvadrat extends PovrsinskiOblik{
 		g.drawRect(this.goreLevo.getX(), 
 					this.goreLevo.getY(), 
 					sirina, sirina);
+		
+		if (this.isSelektovan()) {
+			this.selektovan(g);
+		}
+		
 	}
 
 	@Override
@@ -105,6 +110,33 @@ public class Kvadrat extends PovrsinskiOblik{
 		g.fillRect(this.goreLevo.getX(), 
 					this.goreLevo.getY(), 
 					sirina, sirina);
+	}
+
+	@Override
+	public void selektovan(Graphics g) {
+		this.goreLevo.selektovan(g);
+		this.dijagonala().getPocetna().selektovan(g);
+		this.dijagonala().getKrajnja().selektovan(g);
+		
+		Tacka doleDesno = new Tacka(goreLevo.getX() + sirina, 
+									goreLevo.getY() + sirina);
+		doleDesno.selektovan(g);
+		
+		Linija gore = new Linija(goreLevo,
+								dijagonala().getPocetna());
+		gore.sredinaLinije().selektovan(g);
+		
+		Linija dole = new Linija(dijagonala().getKrajnja(),
+								doleDesno);
+		dole.sredinaLinije().selektovan(g);
+		
+		Linija levo = new Linija(goreLevo,
+								dijagonala().getKrajnja());
+		levo.sredinaLinije().selektovan(g);
+		
+		Linija desno = new Linija(dijagonala().getPocetna(),
+									doleDesno);
+		desno.sredinaLinije().selektovan(g);
 	}
 
 }

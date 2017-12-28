@@ -27,15 +27,20 @@ public class Crtez extends JPanel{
 											30, 20, "zelena", "zuta");
 		Krug kr = new Krug(new Tacka(120,120), 10, "crna", "zuta");
 		
+		t1.setSelektovan(true);
 		t1.crtajSe(g);
+		l1.setSelektovan(true);
 		l1.crtajSe(g);
 		
+		k.setSelektovan(true);
 		k.popuni(g);
 		k.crtajSe(g);
 		
+		p.setSelektovan(true);
 		p.popuni(g);
 		p.crtajSe(g);
 		
+		kr.setSelektovan(true);
 		kr.popuni(g);
 		kr.crtajSe(g);
 	}
