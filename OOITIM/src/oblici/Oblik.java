@@ -52,6 +52,6 @@ public abstract class Oblik implements Pomerljiv, Comparable {
 	
 	public abstract void selektovan(Graphics g);
 	
-	
+	public abstract boolean sadrzi(int x, int y);
 
 }

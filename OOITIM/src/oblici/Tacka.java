@@ -103,6 +103,16 @@ public class Tacka extends Oblik{
 		g.setColor(Color.BLUE);
 		g.drawRect(x-3, y-3, 6, 6);
 	}
+
+	@Override
+	public boolean sadrzi(int x, int y) {
+		Tacka kliknuto = new Tacka(x, y);
+		if (this.udaljenost(kliknuto)<=3) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 
 }

@@ -102,5 +102,20 @@ public class Linija extends Oblik{
 		krajnja.selektovan(g);
 		
 	}
+
+	@Override
+	public boolean sadrzi(int x, int y) {
+		Tacka kliknuto = new Tacka(x, y);
+		double udaljenostPocetna = this.getPocetna().udaljenost(kliknuto);
+		double udaljenostKrajnja = this.getKrajnja().udaljenost(kliknuto);
+		
+		double udaljenost = udaljenostPocetna + udaljenostKrajnja;
+		
+		if ((udaljenost - this.duzina())<=0.05) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 }

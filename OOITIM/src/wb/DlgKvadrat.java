@@ -3,6 +3,7 @@ package wb;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.awt.Frame;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
@@ -11,14 +12,18 @@ import java.awt.Insets;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class DlgKvadrat extends JDialog{
-	//nije zavrseno
 	
 	private JTextField txtStranica;
 	private DefaultComboBoxModel cmbModelIvica = new DefaultComboBoxModel();
 	private DefaultComboBoxModel cmbModelUnutrasnjost = new DefaultComboBoxModel();
-	public DlgKvadrat() {
+	
+	public DlgKvadrat(Frame vlasnik, String naslov, boolean modal) {
+		super(vlasnik, naslov, modal);
+		setSize(400,300);
 		
 		JPanel panel = new JPanel();
 		getContentPane().add(panel, BorderLayout.CENTER);
@@ -79,6 +84,11 @@ public class DlgKvadrat extends JDialog{
 		panel.add(cmbUnutrasnjost, gbc_comboBox_1);
 		
 		JButton btnC = new JButton("Cancel");
+		btnC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		GridBagConstraints gbc_btnC = new GridBagConstraints();
 		gbc_btnC.insets = new Insets(0, 0, 0, 5);
 		gbc_btnC.gridx = 0;
@@ -94,6 +104,12 @@ public class DlgKvadrat extends JDialog{
 		cmbUnutrasnjost.setModel(cmbModelUnutrasnjost);
 		
 		JButton btnOk = new JButton("OK");
+		btnOk.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				setVisible(false);
+			}
+		});
 		GridBagConstraints gbc_btnOk = new GridBagConstraints();
 		gbc_btnOk.gridx = 1;
 		gbc_btnOk.gridy = 4;

@@ -167,6 +167,21 @@ public class VezbaWB extends JFrame{
 		btnLicniPodaci.setBounds(280, 139, 89, 23);
 		panel.add(btnLicniPodaci);
 		
+		JButton btnKvadrat = new JButton("Kvadrat");
+		btnKvadrat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dlgKvadrat(e);
+			}
+		});
+		btnKvadrat.setBounds(280, 189, 89, 23);
+		panel.add(btnKvadrat);
 		
+	}
+	
+	public void dlgKvadrat(ActionEvent e) {
+		DlgKvadrat d = new DlgKvadrat(this, "Kvadrat", true);
+		d.setVisible(true);
+		
+		System.out.println("Nastavio");
 	}
 }

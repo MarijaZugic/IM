@@ -139,4 +139,10 @@ public class Kvadrat extends PovrsinskiOblik{
 		desno.sredinaLinije().selektovan(g);
 	}
 
+	@Override
+	public boolean sadrzi(int x, int y) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

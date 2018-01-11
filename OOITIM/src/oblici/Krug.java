@@ -105,4 +105,10 @@ public class Krug extends PovrsinskiOblik{
 		
 	}
 
+	@Override
+	public boolean sadrzi(int x, int y) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
