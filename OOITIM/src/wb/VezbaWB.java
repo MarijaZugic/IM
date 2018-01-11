@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 public class VezbaWB extends JFrame{
+	//komentar
 	private ButtonGroup btng = new ButtonGroup();
 	private DefaultListModel dlm = new DefaultListModel();
 	private JTextField txtIme;

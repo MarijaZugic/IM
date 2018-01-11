@@ -13,7 +13,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 
 public class DlgKvadrat extends JDialog{
-	//nije zavrsen primer
+	//nije zavrseno
 	
 	private JTextField txtStranica;
 	private DefaultComboBoxModel cmbModelIvica = new DefaultComboBoxModel();
